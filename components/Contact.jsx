@@ -5,7 +5,7 @@ import contactBg from '/contactbg.png'
 export default function Contact({ setActiveSection }) {
   return (
     <section id="contact" className="py-20 px-6 bg-gray-900">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl px-6 mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
