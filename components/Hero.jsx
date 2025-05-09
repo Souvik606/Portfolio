@@ -9,6 +9,30 @@ export default function Hero({ setActiveSection }) {
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-pink-900/20 blur-3xl"></div>
         <div className="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full bg-pink-800/15 blur-3xl"></div>
+
+        {/* Floating and moving dots animation */}
+        {[...Array(50)].map((_, index) => (
+          <motion.div
+            key={index}
+            className="absolute w-2 h-2 rounded-full bg-pink-500"
+            style={{
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              opacity: Math.random() * 0.7 + 0.3,
+            }}
+            animate={{
+              x: [0, Math.random() * 100 - 50],
+              y: [0, Math.random() * 100 - 50],
+              opacity: [0.3, 0.7, 0.3],
+            }}
+            transition={{
+              duration: Math.random() * 10 + 5,
+              repeat: Infinity,
+              repeatType: 'reverse',
+              ease: 'easeInOut',
+            }}
+          />
+        ))}
       </div>
 
       <div className="max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center justify-center gap-12 relative z-10 py-16">
@@ -88,10 +112,7 @@ export default function Hero({ setActiveSection }) {
           <div className="relative max-w-md">
             <div className="absolute -top-8 -left-8 w-32 h-32 rounded-full bg-pink-900/30 blur-xl"></div>
             <div className="absolute -bottom-8 -right-8 w-32 h-32 rounded-full bg-pink-800/30 blur-xl"></div>
-            <img
-              src={heroBg}
-              alt="Souvik Mukherjee"
-            />
+            <img src={heroBg} alt="Souvik Mukherjee" />
           </div>
         </motion.div>
       </div>

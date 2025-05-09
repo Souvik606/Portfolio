@@ -21,11 +21,20 @@ export default function Navbar({ activeSection, setActiveSection }) {
 
         <div className="hidden md:flex space-x-8">
           {links.map((link) => (
-            <motion.a
+            <motion.button
               key={link.id}
-              href={`#${link.id}`}
-              className={`relative px-1 py-2 ${activeSection === link.id ? 'text-pink-400 font-medium' : 'text-gray-300 hover:text-pink-300'}`}
-              onClick={() => setActiveSection(link.id)}
+              className={`relative px-1 py-2 ${
+                activeSection === link.id
+                  ? 'text-pink-400 font-medium'
+                  : 'text-gray-300 hover:text-pink-300'
+              }`}
+              onClick={() => {
+                setActiveSection(link.id);
+                const contactSection = document.getElementById(link.id);
+                if (contactSection) {
+                  contactSection.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
               whileHover={{ scale: 1.05 }}
             >
               {link.name}
@@ -36,7 +45,7 @@ export default function Navbar({ activeSection, setActiveSection }) {
                   transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
                 />
               )}
-            </motion.a>
+            </motion.button>
           ))}
         </div>
 

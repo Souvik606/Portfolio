@@ -1,16 +1,19 @@
 import { motion } from 'framer-motion'
-import { FiCode, FiCpu, FiSmartphone, FiServer } from 'react-icons/fi'
+import { FiSmartphone, FiServer } from 'react-icons/fi'
+import { FaRobot, FaLaptop } from "react-icons/fa";
+import { BsWebcamFill } from "react-icons/bs";
 import Educationbg1 from '/educationbg1.png';
 import Educationbg2 from '/educationbg2.png';
 import Educationbg3 from '/educationbg3.png';
 
 export default function About({ setActiveSection }) {
   const interests = [
-    { name: "Frontend Development", icon: <FiCpu className="text-pink-400" size={75} /> },
+    { name: "Frontend Development", icon: <FaLaptop className="text-pink-400" size={75} /> },
     { name: "Backend Development", icon: <FiServer className="text-pink-400" size={75} /> },
     { name: "Mobile App Development", icon: <FiSmartphone className="text-pink-400" size={75} /> },
-    { name: "Computer Vision", icon: <FiCode className="text-pink-400" size={75} /> }
-  ]
+    { name: "Machine Learning", icon: <FaRobot className="text-pink-400" size={75} /> },
+    { name: "Computer Vision", icon: <BsWebcamFill className="text-pink-400" size={75} /> }
+  ];
 
   const education = [
     {
@@ -40,11 +43,18 @@ export default function About({ setActiveSection }) {
       description: "Completed with outstanding academic performance and extracurricular achievements.",
       image: Educationbg1,
     }
-  ]
+  ];
+
+  const achievements = [
+    "Qualified JEE Mains and JEE Advanced 2022 out of 10,00,000+ aspirants.",
+    "Qualified GATE CSE 2025 with AIR 199 out of 1,70,000 aspirants.",
+    "Solved 200+ DSA problems across LeetCode and GeeksforGeeks."
+  ];
 
   return (
     <section id="about" className="py-20 px-6 bg-gray-800">
       <div className="max-w-7xl mx-auto">
+        {/* About Me Section */}
         <motion.div
           initial={{opacity: 0, y: 50}}
           whileInView={{opacity: 1, y: 0}}
@@ -59,16 +69,16 @@ export default function About({ setActiveSection }) {
           <div className="space-y-4 text-gray-400">
             <p className="text-lg font-semibold">
               I'm Souvik Mukherjee, a student currently pursuing my BTech in Computer Science and Engineering from
-              Calcutta University.
-              Alongside my studies, I'm a passionate web developer who designs and builds modern websites, and
-              occasionally crafts
-              mobile applications using React Native.
+              Calcutta University. Alongside my studies, I'm a passionate web developer who designs and builds modern
+              websites,
+              and occasionally crafts mobile applications using React Native.
             </p>
             <p className="text-lg font-semibold">
               My journey in development began when I created my first website in college, and since then I've been
-              hooked on turning ideas
-              into functional, beautiful digital experiences. I believe in writing clean, efficient code that delivers
-              exceptional user experiences.
+              hooked
+              on turning ideas into functional, beautiful digital experiences. I believe in writing clean, efficient
+              code
+              that delivers exceptional user experiences.
             </p>
           </div>
         </motion.div>
@@ -82,9 +92,10 @@ export default function About({ setActiveSection }) {
           className="mb-20"
         >
           <h3 className="text-3xl font-bold text-center mb-8">
-            My <span className="bg-gradient-to-r from-pink-400 to-pink-600 bg-clip-text text-transparent">Interests</span>
+            My <span
+            className="bg-gradient-to-r from-pink-400 to-pink-600 bg-clip-text text-transparent">Interests</span>
           </h3>
-          <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-20 max-w-6xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-20 max-w-6xl mx-auto">
             {interests.map((interest, index) => (
               <motion.div
                 key={index}
@@ -93,18 +104,16 @@ export default function About({ setActiveSection }) {
                 viewport={{once: true}}
                 transition={{duration: 0.5, delay: index * 0.2}}
                 whileHover={{scale: 1.05}}
-                className=""
+                className="flex flex-col items-center"
               >
-                <div>
-                  {interest.icon}
-                <p className="text-gray-300 text-2xl mt-4">{interest.name}</p>
-                </div>
+                <div>{interest.icon}</div>
+                <p className="text-gray-300 text-2xl mt-4 text-center">{interest.name}</p>
               </motion.div>
             ))}
           </div>
         </motion.div>
 
-        {/* Education Timeline Section */}
+        {/* Education Section */}
         <div className="mt-12">
           <motion.h3
             initial={{opacity: 0}}
@@ -113,7 +122,8 @@ export default function About({ setActiveSection }) {
             transition={{duration: 0.6}}
             className="text-3xl font-bold text-center mb-12"
           >
-            My <span className="bg-gradient-to-r from-pink-400 to-pink-600 bg-clip-text text-transparent">Education</span>
+            My <span
+            className="bg-gradient-to-r from-pink-400 to-pink-600 bg-clip-text text-transparent">Education</span>
           </motion.h3>
 
           <div className="relative max-w-3xl mx-auto">
@@ -123,19 +133,21 @@ export default function About({ setActiveSection }) {
             {education.map((edu, index) => (
               <motion.div
                 key={index}
-                initial={{opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
+                initial={{opacity: 0, x: index % 2 === 0 ? -50 : 50}}
+                whileInView={{opacity: 1, x: 0}}
+                viewport={{once: true}}
+                transition={{duration: 0.6, delay: index * 0.2}}
                 className={`mb-12 flex ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-start`}
               >
                 {/* Timeline dot */}
-                <div className="hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-pink-500/20 border-2 border-pink-500 z-10">
+                <div
+                  className="hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-pink-500/20 border-2 border-pink-500 z-10">
                   <div className="w-3 h-3 rounded-full bg-pink-500"></div>
                 </div>
 
                 {/* Timeline content */}
-                <div className={`flex-1 ${index % 2 === 0 ? 'md:ml-8' : 'md:mr-8'} bg-gray-700/50 p-6 rounded-xl border border-gray-600 backdrop-blur-sm`}>
+                <div
+                  className={`flex-1 ${index % 2 === 0 ? 'md:ml-8' : 'md:mr-8'} bg-gray-700/50 p-6 rounded-xl border border-gray-600 backdrop-blur-sm`}>
                   <div className="flex">
                     <img className="w-44" src={edu.image} alt={edu.grade}/>
                     <div>
@@ -155,26 +167,30 @@ export default function About({ setActiveSection }) {
         </div>
 
         <motion.div
-          initial={{opacity: 0}}
-          whileInView={{opacity: 1}}
+          initial={{opacity: 0, y: 50}}
+          whileInView={{opacity: 1, y: 0}}
           viewport={{once: true}}
-          transition={{duration: 0.6}}
-          className="text-center mt-16"
+          transition={{staggerChildren: 0.3}}
+          className="mt-20 text-center"
         >
-          <motion.button
-            whileHover={{scale: 1.02}}
-            whileTap={{scale: 0.98}}
-            onClick={() => {
-              const contactSection = document.getElementById("contact");
-              if (contactSection) {
-                contactSection.scrollIntoView({behavior: "smooth" });
-              }
-            }}
-            className="px-8 py-3 rounded-lg bg-gradient-to-r from-pink-500 to-pink-600 text-white font-medium shadow-lg shadow-pink-900/30"
-          >
-            Let's Work Together
-          </motion.button>
+          <h3 className="text-3xl font-bold mb-8">
+            My <span
+            className="bg-gradient-to-r from-pink-400 to-pink-600 bg-clip-text text-transparent">Achievements</span>
+          </h3>
+          {achievements.map((achievement, index) => (
+            <motion.p
+              key={index}
+              initial={{opacity: 0, y: 50}}
+              whileInView={{opacity: 1, y: 0}}
+              viewport={{once: true}}
+              transition={{duration: 0.6, delay: index * 0.3}}
+              className="text-lg font-semibold text-gray-300 mb-6"
+            >
+              {achievement}
+            </motion.p>
+          ))}
         </motion.div>
+
       </div>
     </section>
   )

@@ -29,26 +29,30 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-pink-500/30 transition-colors duration-300 backdrop-blur-sm"
+              className="bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-pink-500/30 transition-colors duration-300 backdrop-blur-sm flex flex-col items-center justify-center"
             >
-              <h3 className="text-xl font-bold text-gray-100 mb-6 pb-2 border-b border-gray-700">
+              <h3 className="text-xl font-bold text-gray-100 mb-6 pb-2 border-b border-gray-700 text-center">
                 {category}
               </h3>
 
               {Object.entries(levels).map(([level, skillsList]) => (
                 <div key={level} className="mb-6 last:mb-0">
-                  <h4 className="text-md font-medium text-pink-400 mb-4">
+                  <h4 className="text-md font-medium text-pink-400 mb-4 text-center">
                     {level}
                   </h4>
-                  <div className="flex flex-wrap gap-3">
+                  <div className="flex flex-wrap gap-5 justify-center">
                     {skillsList.map((skill, skillIndex) => (
                       <motion.div
                         key={skillIndex}
                         whileHover={{ y: -3 }}
-                        className="flex flex-col items-center p-3 bg-gray-700/30 rounded-lg border border-gray-600 hover:border-pink-400/50 transition-colors"
+                        className="flex flex-col items-center justify-center p-3 bg-gray-700/30 rounded-lg border border-gray-600 hover:border-pink-400/50 transition-colors w-32 h-32"
                       >
-                        <img src={skill.logo} alt={skill.name} className="w-10 h-10 mb-2" />
-                        <span className="text-sm text-gray-300">{skill.name}</span>
+                        <img
+                          src={skill.logo}
+                          alt={skill.name}
+                          className="w-16 h-16 mb-2 object-contain"
+                        />
+                        <span className="text-sm text-gray-300 text-center break-words">{skill.name}</span>
                       </motion.div>
                     ))}
                   </div>
