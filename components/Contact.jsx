@@ -6,13 +6,8 @@ export default function Contact({ setActiveSection }) {
   return (
     <section id="contact" className="py-20 px-6 bg-gray-900">
       <div className="max-w-7xl px-6 mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+        {/* Header Section */}
+        <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Get In <span className="bg-gradient-to-r from-pink-400 to-pink-600 bg-clip-text text-transparent">Touch</span>
           </h2>
@@ -20,24 +15,18 @@ export default function Contact({ setActiveSection }) {
           <p className="text-lg text-gray-400 max-w-3xl mx-auto">
             Have a project in mind or want to discuss potential opportunities? I'd love to hear from you!
           </p>
-        </motion.div>
+        </div>
 
+        {/* Contact Information and Form Section */}
         <div className="grid max-w-7xl mx-auto md:grid-cols-[1fr_1.5fr] gap-8 items-stretch">
           {/* Contact Information Card */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="h-full bg-gradient-to-br from-pink-500 to-pink-600 p-8 rounded-2xl shadow-2xl shadow-pink-900/30 flex flex-col"
-          >
+          <div className="h-full bg-gradient-to-br from-pink-500 to-pink-600 p-8 rounded-2xl shadow-2xl shadow-pink-900/30 flex flex-col">
             <div className="flex-1 flex flex-col items-center text-center">
               <img
                 src={contactBg}
                 alt="Contact background"
                 className="w-full max-w-[280px] mb-6 rounded-lg"
               />
-
               <div className="space-y-6 w-full">
                 <h3 className="text-3xl font-bold text-white">Contact Information</h3>
                 <p className="text-pink-100">
@@ -77,23 +66,17 @@ export default function Contact({ setActiveSection }) {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Form Card */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="h-full bg-gray-800/70 p-8 rounded-2xl border border-gray-700/50 shadow-2xl shadow-pink-900/10 backdrop-blur-sm flex flex-col"
-          >
+          <div className="h-full bg-gray-800/70 p-8 rounded-2xl border border-gray-700/50 shadow-2xl shadow-pink-900/10 backdrop-blur-sm flex flex-col">
             <h3 className="text-3xl font-bold text-white mb-6 text-center">
               Send Me a Message
             </h3>
 
             <form className="flex-1 flex flex-col space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
-                <motion.div whileHover={{ scale: 1.01 }} className="space-y-2">
+                <div className="space-y-2">
                   <label htmlFor="name" className="block text-gray-300 font-medium">Your Name</label>
                   <input
                     type="text"
@@ -101,8 +84,8 @@ export default function Contact({ setActiveSection }) {
                     className="w-full px-4 py-3 rounded-xl bg-gray-700/80 border border-gray-600/50 focus:border-pink-500 focus:ring-2 focus:ring-pink-500/30 text-gray-100 placeholder-gray-400 transition-all"
                     placeholder="John Doe"
                   />
-                </motion.div>
-                <motion.div whileHover={{ scale: 1.01 }} className="space-y-2">
+                </div>
+                <div className="space-y-2">
                   <label htmlFor="email" className="block text-gray-300 font-medium">Your Email</label>
                   <input
                     type="email"
@@ -110,10 +93,10 @@ export default function Contact({ setActiveSection }) {
                     className="w-full px-4 py-3 rounded-xl bg-gray-700/80 border border-gray-600/50 focus:border-pink-500 focus:ring-2 focus:ring-pink-500/30 text-gray-100 placeholder-gray-400 transition-all"
                     placeholder="john@example.com"
                   />
-                </motion.div>
+                </div>
               </div>
 
-              <motion.div whileHover={{ scale: 1.01 }} className="space-y-2">
+              <div className="space-y-2">
                 <label htmlFor="subject" className="block text-gray-300 font-medium">Subject</label>
                 <input
                   type="text"
@@ -121,9 +104,9 @@ export default function Contact({ setActiveSection }) {
                   className="w-full px-4 py-3 rounded-xl bg-gray-700/80 border border-gray-600/50 focus:border-pink-500 focus:ring-2 focus:ring-pink-500/30 text-gray-100 placeholder-gray-400 transition-all"
                   placeholder="What's this about?"
                 />
-              </motion.div>
+              </div>
 
-              <motion.div whileHover={{ scale: 1.01 }} className="space-y-2 flex-1">
+              <div className="space-y-2 flex-1">
                 <label htmlFor="message" className="block text-gray-300 font-medium">Your Message</label>
                 <textarea
                   id="message"
@@ -131,7 +114,7 @@ export default function Contact({ setActiveSection }) {
                   className="resize-none w-full h-full min-h-[150px] px-4 py-3 rounded-xl bg-gray-700/80 border border-gray-600/50 focus:border-pink-500 focus:ring-2 focus:ring-pink-500/30 text-gray-100 placeholder-gray-400 transition-all"
                   placeholder="Hello, I'd like to talk about..."
                 ></textarea>
-              </motion.div>
+              </div>
 
               <motion.button
                 whileHover={{
@@ -146,7 +129,7 @@ export default function Contact({ setActiveSection }) {
                 <span>Send Message</span>
               </motion.button>
             </form>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
