@@ -1,5 +1,8 @@
 import { motion } from 'framer-motion'
 import { FiCode, FiCpu, FiSmartphone, FiServer } from 'react-icons/fi'
+import Educationbg1 from '/educationbg1.png';
+import Educationbg2 from '/educationbg2.png';
+import Educationbg3 from '/educationbg3.png';
 
 export default function About({ setActiveSection }) {
   const interests = [
@@ -16,7 +19,8 @@ export default function About({ setActiveSection }) {
       degree: "Bachelor of Technology",
       field: "Computer Science & Engineering",
       institution: "Calcutta University",
-      description: "Currently pursuing my degree with focus on software development, algorithms, and computer systems."
+      description: "Currently pursuing my degree with focus on software development, algorithms, and computer systems.",
+      image: Educationbg3,
     },
     {
       year: "2020- 2022",
@@ -24,7 +28,8 @@ export default function About({ setActiveSection }) {
       degree: "Higher Secondary",
       field: "Science (PCM)",
       institution: "Green Point Academy",
-      description: "Completed with distinction in Physics, Chemistry, Mathematics, and Computer Science."
+      description: "Completed with distinction in Physics, Chemistry, Mathematics, and Computer Science.",
+      image: Educationbg2,
     },
     {
       year: "2009 - 2020",
@@ -32,7 +37,8 @@ export default function About({ setActiveSection }) {
       degree: "Secondary Education",
       field: "General Studies",
       institution: "Green Point Academy",
-      description: "Completed with outstanding academic performance and extracurricular achievements."
+      description: "Completed with outstanding academic performance and extracurricular achievements.",
+      image: Educationbg1,
     }
   ]
 
@@ -130,13 +136,18 @@ export default function About({ setActiveSection }) {
 
                 {/* Timeline content */}
                 <div className={`flex-1 ${index % 2 === 0 ? 'md:ml-8' : 'md:mr-8'} bg-gray-700/50 p-6 rounded-xl border border-gray-600 backdrop-blur-sm`}>
-                  <div className="flex flex-col md:flex-row justify-between gap-4 mb-2">
-                    <span className="text-pink-400 font-medium">{edu.year}</span>
-                    <span className="text-gray-300 bg-gray-600 px-3 py-1 rounded-full text-sm">{edu.grade}</span>
+                  <div className="flex">
+                    <img className="w-44" src={edu.image} alt={edu.grade}/>
+                    <div>
+                      <div className="flex flex-col md:flex-row justify-between gap-4 mb-2">
+                        <span className="text-pink-400 font-medium">{edu.year}</span>
+                        <span className="text-gray-300 bg-gray-600 px-3 py-1 rounded-full text-sm">{edu.grade}</span>
+                      </div>
+                      <h4 className="text-xl font-bold text-gray-100">{edu.degree} in {edu.field}</h4>
+                      <p className="text-pink-400 font-medium mb-2">{edu.institution}</p>
+                      <p className="text-gray-400">{edu.description}</p>
+                    </div>
                   </div>
-                  <h4 className="text-xl font-bold text-gray-100">{edu.degree} in {edu.field}</h4>
-                  <p className="text-pink-400 font-medium mb-2">{edu.institution}</p>
-                  <p className="text-gray-400">{edu.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -144,19 +155,19 @@ export default function About({ setActiveSection }) {
         </div>
 
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          initial={{opacity: 0}}
+          whileInView={{opacity: 1}}
+          viewport={{once: true}}
+          transition={{duration: 0.6}}
           className="text-center mt-16"
         >
           <motion.button
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
+            whileHover={{scale: 1.02}}
+            whileTap={{scale: 0.98}}
             onClick={() => {
               const contactSection = document.getElementById("contact");
               if (contactSection) {
-                contactSection.scrollIntoView({ behavior: "smooth" });
+                contactSection.scrollIntoView({behavior: "smooth" });
               }
             }}
             className="px-8 py-3 rounded-lg bg-gradient-to-r from-pink-500 to-pink-600 text-white font-medium shadow-lg shadow-pink-900/30"
