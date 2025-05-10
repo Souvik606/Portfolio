@@ -6,7 +6,7 @@ import Educationbg1 from '/educationbg1.png';
 import Educationbg2 from '/educationbg2.png';
 import Educationbg3 from '/educationbg3.png';
 
-export default function About({ setActiveSection }) {
+export default function About() {
   const interests = [
     { name: "Frontend Development", icon: <FaLaptop className="text-pink-400" size={75} /> },
     { name: "Backend Development", icon: <FiServer className="text-pink-400" size={75} /> },

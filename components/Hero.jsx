@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { FiArrowDown } from 'react-icons/fi'
 import heroBg from '../public/herobg.png'
 
-export default function Hero({ setActiveSection }) {
+export default function Hero() {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center px-6 bg-gradient-to-br from-gray-800 to-gray-900 relative overflow-hidden">
       {/* Animated background elements */}

@@ -11,13 +11,13 @@ export default function App() {
   const [activeSection, setActiveSection] = useState('home')
 
   return (
-    <div className="bg-gray-900 text-gray-100 font-sans">
+    <div className="overflow-x-hidden bg-gray-900 text-gray-100 font-sans">
       <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
-      <Hero setActiveSection={setActiveSection} />
-      <About setActiveSection={setActiveSection} />
-      <Projects setActiveSection={setActiveSection} />
-      <Skills setActiveSection={setActiveSection} />
-      <Contact setActiveSection={setActiveSection} />
+      <Hero />
+      <About />
+      <Projects />
+      <Skills />
+      <Contact />
       <Footer />
     </div>
   )
