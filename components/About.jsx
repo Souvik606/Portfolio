@@ -1,32 +1,42 @@
 import { motion } from 'framer-motion'
-import { FiSmartphone, FiServer } from 'react-icons/fi'
+import { FiSmartphone, FiServer, FiCpu, FiCode } from 'react-icons/fi'
 import { FaRobot, FaLaptop } from "react-icons/fa";
 import { BsWebcamFill } from "react-icons/bs";
 import Educationbg1 from '/educationbg1.png';
 import Educationbg2 from '/educationbg2.png';
 import Educationbg3 from '/educationbg3.png';
+import Educationbg4 from '/educationbg4.png';
 
 export default function About() {
   const interests = [
-    { name: "Frontend Development", icon: <FaLaptop className="text-pink-400" size={75} /> },
-    { name: "Backend Development", icon: <FiServer className="text-pink-400" size={75} /> },
-    { name: "Mobile App Development", icon: <FiSmartphone className="text-pink-400" size={75} /> },
-    { name: "Machine Learning", icon: <FaRobot className="text-pink-400" size={75} /> },
-    { name: "Computer Vision", icon: <BsWebcamFill className="text-pink-400" size={75} /> }
+    { name: "Distributed Systems", icon: <FiServer className="text-pink-400" size={75} /> },
+    { name: "Concurrency & Databases", icon: <FiCpu className="text-pink-400" size={75} /> },
+    { name: "Systems Programming", icon: <FaLaptop className="text-pink-400" size={75} /> },
+    { name: "Compilers & PL Theory", icon: <FiCode className="text-pink-400" size={75} /> },
+    { name: "Competitive Programming", icon: <FaRobot className="text-pink-400" size={75} /> }
   ];
 
   const education = [
     {
+      year: "2026 - 2028 (Incoming)",
+      grade: "M.Tech CSE",
+      degree: "Master of Technology",
+      field: "Computer Science",
+      institution: "IIT Madras",
+      description: "Focusing on distributed systems, concurrency, systems programming, and theory.",
+      image: Educationbg4,
+    },
+    {
       year: "2022 - 2026",
-      grade: "9.67 CGPA (Till 4th Sem)",
+      grade: "9.61 CGPA",
       degree: "Bachelor of Technology",
       field: "Computer Science & Engineering",
       institution: "Calcutta University",
-      description: "Currently pursuing my degree with focus on software development, algorithms, and computer systems.",
+      description: "Focused on software design, algorithms, computer infrastructure, and systems.",
       image: Educationbg3,
     },
     {
-      year: "2020- 2022",
+      year: "2020 - 2022",
       grade: "95.33%",
       degree: "Higher Secondary",
       field: "Science (PCM)",
@@ -46,9 +56,11 @@ export default function About() {
   ];
 
   const achievements = [
-    "Qualified JEE Mains and JEE Advanced 2022 out of 10,00,000+ aspirants.",
-    "Qualified GATE CSE 2025 with AIR 199 out of 1,70,000 aspirants.",
-    "Solved 200+ DSA problems across LeetCode and GeeksforGeeks."
+    "Cracked GATE CS with AIR 48 in 2026 (top 0.02% of 211,000 aspirants) and AIR 199 in 2025 out of 170,000 aspirants.",
+    "Attained the title of Expert (peak rating 1729) on Codeforces under handle v1kCoder; Knight badge on LeetCode (peak rating 1885).",
+    "Secured global rank 412 in Codeforces Round 1043 (Div.3) and 756 in Round 1049 (Div.2).",
+    "Co-organized Code Combat, a multi-tier competitive programming tournament at Reflexons 2026 (CU Technology Campus), designing problem distribution metrics and managing contest logistics.",
+    "Secured 1st place in the Inter-College Treasure Hunt at Reflexons 2026."
   ];
 
   return (
@@ -68,17 +80,10 @@ export default function About() {
           <div className="w-20 h-1 bg-gradient-to-r from-pink-500 to-pink-600 mx-auto mb-6"></div>
           <div className="space-y-4 text-gray-400">
             <p className="text-lg font-semibold">
-              I'm Souvik Mukherjee, a student currently pursuing my BTech in Computer Science and Engineering from
-              Calcutta University. Alongside my studies, I'm a passionate web developer who designs and builds modern
-              websites,
-              and occasionally crafts mobile applications using React Native.
+              I'm Souvik Mukherjee, a Computer Science engineer specializing in distributed systems, concurrency, and systems programming in Go and C++. I love building production-grade infrastructure from first principles — TCP servers, compilers, and version-control systems — with strong foundations in data structures, algorithms, and software design.
             </p>
             <p className="text-lg font-semibold">
-              My journey in development began when I created my first website in college, and since then I've been
-              hooked
-              on turning ideas into functional, beautiful digital experiences. I believe in writing clean, efficient
-              code
-              that delivers exceptional user experiences.
+              I recently graduated with a B.Tech in Computer Science and Engineering from Calcutta University (9.61 CGPA) and will be pursuing my M.Tech in Computer Science at IIT Madras. I am passionate about writing clean, concurrency-safe, and highly optimized code to solve complex engineering challenges.
             </p>
           </div>
         </motion.div>
@@ -149,11 +154,11 @@ export default function About() {
                 <div
                   className={`flex-1 ${index % 2 === 0 ? 'md:ml-8' : 'md:mr-8'} bg-gray-700/50 p-6 rounded-xl border border-gray-600 backdrop-blur-sm`}>
                   <div className="flex">
-                    <img className="w-44" src={edu.image} alt={edu.grade}/>
-                    <div>
+                    <img className="w-44 h-auto object-contain mr-4" src={edu.image} alt={edu.grade}/>
+                    <div className="flex-1">
                       <div className="flex flex-col md:flex-row justify-between gap-4 mb-2">
                         <span className="text-pink-400 font-medium">{edu.year}</span>
-                        <span className="text-gray-300 bg-gray-600 px-3 py-1 rounded-full text-sm">{edu.grade}</span>
+                        <span className="text-gray-300 bg-gray-600 px-3 py-1 rounded-full text-sm w-fit">{edu.grade}</span>
                       </div>
                       <h4 className="text-xl font-bold text-gray-100">{edu.degree} in {edu.field}</h4>
                       <p className="text-pink-400 font-medium mb-2">{edu.institution}</p>
@@ -184,9 +189,9 @@ export default function About() {
               whileInView={{opacity: 1, y: 0}}
               viewport={{once: true}}
               transition={{duration: 0.6, delay: index * 0.3}}
-              className="text-lg font-semibold text-gray-300 mb-6"
+              className="text-lg font-semibold text-gray-300 mb-6 max-w-4xl mx-auto"
             >
-              {achievement}
+              • {achievement}
             </motion.p>
           ))}
         </motion.div>
@@ -195,3 +200,4 @@ export default function About() {
     </section>
   )
 }
+

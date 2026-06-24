@@ -3,6 +3,33 @@ import { FiGithub, FiExternalLink } from 'react-icons/fi'
 
 const projects = [
   {
+    title: "GORedis — Concurrent In-Memory Database",
+    description: "A multi-threaded, concurrent TCP server from scratch using Go. Handles thousands of multiplexed connections, 30+ RESP commands across 5 data types, transactions, lazy/active key expiration, Pub/Sub, and async AOF persistence (37K+ ops/sec at 0.83ms latency).",
+    tags: ["Go (Golang)", "TCP Server", "Concurrency", "RESP Protocol", "Database Design"],
+    image: "⚡",
+    github: "https://github.com/Souvik606/Go-redis",
+    live: "",
+    type: "Self Project"
+  },
+  {
+    title: "Goit — Distributed Version Control System",
+    description: "A Git-like distributed version control system. Features a DAG-based state machine, custom Diff3 algorithm for 3-way merges (traverses history at 5,000 commits/ms), custom distributed HTTP server sustaining 150 MB/s clone throughput, and zlib-compressed object store.",
+    tags: ["Go (Golang)", "Distributed Systems", "Graph DAG", "CLI", "Networks"],
+    image: "🌳",
+    github: "https://github.com/Souvik606/goit",
+    live: "",
+    type: "Self Project"
+  },
+  {
+    title: "Sardine — Compiler Frontend & Interpreter",
+    description: "A compiler frontend and AST tree-walk interpreter in C++23 featuring a custom DFA lexical scanner, Recursive Descent parser supporting 40+ procedural/OOP language constructs, and a Next.js/Tailwind Web Console for real-time AST flow visualization.",
+    tags: ["C++23", "Compilers", "AST Parsing", "Next.js", "Tailwind CSS"],
+    image: "🐟",
+    github: "https://github.com/Souvik606/Mission-Sardine",
+    live: "",
+    type: "BTech Final Project"
+  },
+  {
     title: "Cravyn - A Food Ordering Platform",
     description: "A modern, user-friendly food delivery platform where restaurants can register themselves and customers can order and many more.",
     tags: ["Next.js", "Tailwind CSS", "Node.js", "Express.js", "PostgreSQL"],
@@ -46,17 +73,9 @@ const projects = [
     github: "https://github.com/Souvik606/Discord-clone",
     live: "",
     type: "Self Project"
-  },
-  {
-    title: "SARDS - A Toy Programming Language (Ongoing)",
-    description: "An interpreted programming language with a web-based editor, allowing users to write, test, and execute code within the browser. Aiming to simplify learning programming concepts.",
-    tags: ["Python", "Next.js", "Tailwind CSS"],
-    image: "📝",
-    github: "https://github.com/Souvik606/SARDS",
-    live: "",
-    type: "Group project"
   }
 ];
+
 
 export default function Projects({ setActiveSection }) {
   return (

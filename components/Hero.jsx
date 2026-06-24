@@ -59,7 +59,7 @@ export default function Hero() {
               transition={{ delay: 0.2, duration: 0.8 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
             >
-              Building <span className="bg-gradient-to-r from-pink-400 to-pink-600 bg-clip-text text-transparent">Digital Experiences</span> That Matter
+              Building <span className="bg-gradient-to-r from-pink-400 to-pink-600 bg-clip-text text-transparent">Systems & Infrastructure</span> From First Principles
             </motion.h1>
 
             <motion.p
@@ -68,7 +68,7 @@ export default function Hero() {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="text-lg text-gray-400"
             >
-              I craft immersive web applications with cutting-edge technologies and pixel-perfect designs that convert visitors into customers.
+              I build production-grade distributed systems, concurrent databases, and compilers in Go and C++. GATE CS 2026 AIR 48 (top 0.02%) & Codeforces Expert.
             </motion.p>
           </div>
 

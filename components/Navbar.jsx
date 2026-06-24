@@ -1,10 +1,12 @@
 import { motion } from 'framer-motion'
 import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi'
+import { SiCodeforces, SiLeetcode } from 'react-icons/si'
 
 export default function Navbar({ activeSection, setActiveSection }) {
   const links = [
     { name: 'Home', id: 'home' },
     { name: 'About', id: 'about' },
+    { name: 'Experience', id: 'experience' },
     { name: 'Projects', id: 'projects' },
     { name: 'Skills', id: 'skills' },
     { name: 'Contact', id: 'contact' }
@@ -49,7 +51,7 @@ export default function Navbar({ activeSection, setActiveSection }) {
           ))}
         </div>
 
-        <div className="flex space-x-4">
+        <div className="flex space-x-4 items-center">
           <motion.a
             href="https://github.com/Souvik606"
             target="_blank"
@@ -67,6 +69,22 @@ export default function Navbar({ activeSection, setActiveSection }) {
             <FiLinkedin size={20} />
           </motion.a>
           <motion.a
+            href="https://codeforces.com/profile/v1kCoder"
+            target="_blank"
+            whileHover={{ y: -3, color: "#EC4899" }}
+            className="text-gray-300 hover:text-pink-400"
+          >
+            <SiCodeforces size={20} />
+          </motion.a>
+          <motion.a
+            href="https://leetcode.com/u/SouvikMukherjee6/"
+            target="_blank"
+            whileHover={{ y: -3, color: "#EC4899" }}
+            className="text-gray-300 hover:text-pink-400"
+          >
+            <SiLeetcode size={20} />
+          </motion.a>
+          <motion.a
             href="mailto:mukherjeesouvik606@gmail.com"
             whileHover={{ y: -3, color: "#EC4899" }}
             className="text-gray-300 hover:text-pink-400"
@@ -78,3 +96,4 @@ export default function Navbar({ activeSection, setActiveSection }) {
     </motion.nav>
   )
 }
+
